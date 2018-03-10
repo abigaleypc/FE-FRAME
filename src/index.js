@@ -4,11 +4,9 @@ import Routers from './routers/index.jsx'
 import { Router } from 'react-router'
 import createBrowserHistory from 'history/createBrowserHistory'
 // TO DO : IMPORT ANTD CSS
-// import 'antd/dist/antd.css'; 
-// import './App.css';
-// require('./App.css')
+import 'antd/dist/antd.less';
 
-// import Layout from './containers/Slider/Slider.jsx'
+
 const history = createBrowserHistory()
 
 import Layout from "./containers/Layout/Layout";
