@@ -1,8 +1,27 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
-import HelloMessage from './HelloMessage.jsx'
+import Routers from './routers/index.jsx'
+import { Router } from 'react-router'
+import createBrowserHistory from 'history/createBrowserHistory'
+// TO DO : IMPORT ANTD CSS
+// import 'antd/dist/antd.css'; 
+// import './App.css';
+// require('./App.css')
 
+// import Layout from './containers/Slider/Slider.jsx'
+const history = createBrowserHistory()
+
+import Layout from "./containers/Layout/Layout";
+
+const App = () => (
+  <Router history={history}>
+    <div>
+      <Layout />
+      <Routers />
+    </div>
+  </Router>
+)
 ReactDOM.render(
-  <HelloMessage name="dd" />,
+  <App />,
   document.getElementById('root')
 );

@@ -18,12 +18,27 @@ module.exports = {
             presets: ['@babel/preset-env']
           }
         }
-      }
+      }, {
+        test: /\.(less|css)$/,
+        use: [{
+          loader: "style-loader" // creates style nodes from JS strings
+        }, {
+          loader: "css-loader" // translates CSS into CommonJS
+        }, {
+          loader: "less-loader"// compiles Less to CSS
+        }]
+      }, { 
+        test: /\.(png|woff|woff2|eot|ttf|svg)$/, 
+        loader: 'url-loader?limit=100000'
+       }
     ]
   },
   devtool: 'source-map',
   mode: 'development',
   plugins: [
-    new HtmlWebpackPlugin({template:'./index.html'})
-  ]
+    new HtmlWebpackPlugin({ template: './index.html' })
+  ],
+  resolve: {
+    extensions: [".js", ".jsx"]
+  }
 }
