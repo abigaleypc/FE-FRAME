@@ -1,1 +1,1 @@
-webpack + ES6
+webpack + ES6 + Redux + React
